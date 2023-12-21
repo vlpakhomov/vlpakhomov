@@ -1,0 +1,227 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{makecell}
+\usepackage[link=off]{phonenumbers}
+
+\usepackage{fontawesome5}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage[margin=0.3in]{geometry}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.0in}
+\addtolength{\evensidemargin}{-0.0in}
+\addtolength{\textwidth}{0in}
+\addtolength{\topmargin}{5pt}
+\addtolength{\textheight}{0.0in}
+
+\urlstyle{same}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!red,
+    linkbordercolor=red,
+    urlcolor=blue!70!black
+}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
+
+\newcommand{\resumeItem}[2]{
+    \item\small{
+        \ifempty{#1}#2\else\textbf{#1}{: #2 \vspace{-2pt}}\fi
+    }
+}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{mygray}{gray}{0}
+\usepackage{fancybox}
+
+\usepackage{lmodern}
+\usepackage{tikz}
+
+% Style definition
+\tikzset{rndblock/.style={rounded corners,rectangle,draw,outer sep=0pt}}
+
+% Command Definition
+% 1 optional to customize the aspect, 2 mandatory: text to be framed
+\newcommand{\tframed}[2][]{\tikz[baseline=(h.base)]\node[rndblock,#1] (h) {\color{black}{#2}};}
+
+\newcommand*{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.8\baselineskip}}
+\newcommand{\skill}[1]{\tframed[lightgray]{\mystrut#1}}
+
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & \textcolor{mygray}{#2}                 \\
+        \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeExpSubheading}[5]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & \textcolor{mygray}{#2}                 \\
+        \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+        {\scriptsize#5}
+    \end{tabular*}\vspace{4pt}
+}
+
+\newcommand{\resumeProjSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1}      & \textcolor{mygray}{#2}                 \\
+        \scriptsize {#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{4pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\usepackage{changepage}
+\newcommand{\resumeDesc}[1]{\begin{adjustwidth}{5pt}{0pt}\vspace{-2pt}{\small{#1}}\end{adjustwidth}}
+
+
+\begin{document}
+
+\vfill\noindent
+\begin{tabular}[t]{@{
+\vspace{0.5ex}
+}left}
+\textbf{\large{Vladislav Pakhomov}} \\
+\address{
++7\hspace{0.5ex}909\hspace{0.5ex}216\hspace{0.5ex}36\hspace{0.5ex}40 $\cdot$ Moscow, Russia
+}
+\end{tabular}
+\hfill % move it to the right
+\begin{tabular}[t]{@{
+\vspace{0.5ex}
+}center}
+\href{mailto:vladislavpakhomov03@gmail.com}{\color{black} vladislavpakhomov03@gmail.com} \\
+
+\href{https://github.com/vlpakhomov}{\color{black} \faGithub}
+
+\href{https://t.me/vlpakhomov}{\color{black} \faTelegram}
+\end{tabular}
+
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{National Research Nuclear University MEPhI}
+{Moscow, Russia}
+{Information Security}
+{Sept. 2021 - Aug. 2025 (Present)}
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjSubheading
+{\href{https://github.com/vlpakhomov/redditclone}{redditclone}}{}
+{\skill{Go} \skill{RESTful API} \skill{Clean Architecture} \skill{MySQL} \skill{MongoDB} \skill{Reddis} \skill{GoMock} \skill{JWT} \skill{Docker}}{November 2023}
+\resumeDesc{
+\begin{itemize}
+\item Designing API according to REST principles
+\item Have authorization using JWT token and Middleware pattern
+\item Thread-Safety application
+\item Almost 100\% coverage in Unit Testing
+\item Designing each component according to SOLID principles
+\item Platform independent application deployment with Docker
+\end{itemize}
+}
+
+\resumeProjSubheading
+{\href{https://github.com/vlpakhomov/url-shortener}{url-shortener}}{}
+{\skill{Go} \skill{RESTful API} \skill{gRPC} \skill{MVC} \skill{PostgreSQL} \skill{Zap logger} \skill{Docker}}{June 2023}
+\resumeDesc{
+\begin{itemize}
+\item Designing API according to REST principles
+\item Thread-Safety application
+\item Flexible application configuration using config parser
+\item Multi-Level Logging usin Zap package
+\item Platform independent application deployment with Docker
+\end{itemize}
+}
+
+
+\resumeSubHeadingListEnd
+
+\section{Achievements}
+\resumeSubHeadingListStart
+
+\resumeProjSubheading
+{{\href{https://education.vk.company/}{Development of web services on Golang by VK Education}}}{}
+{\skill{Go} \skill{Backend/Web development} \skill{Concurrency} \skill{Unit testing}  \skill{Clean Architecture} \skill{OOP} \skill{SQL/NoSQL databases in Go}}
+{Sept. 2023 - Dec. 2023}
+\resumeDesc{
+\begin{itemize}
+\item Wrote clean, secure and scalable code during all course
+\item Got basic skills in web, testing, work with databases from go.
+\item Done six big homework related directly to the business
+\item Took part in the final hackathon in VK
+\item Got on the leaderboard in the final of the course
+\end{itemize}
+}
+
+
+\resumeProjSubheading
+{{\href{https://github.com/vlpakhomov/mipt-cpp}{C++ by MIPT}}}{}
+{\skill{C++11} \skill{Low-level development} \skill{Algorithms} \skill{Data Structures} \skill{OOP} \skill{SOLID} \skill{CMake} \skill{Valgrind/ASAN} }
+{Jan. 2023 - May 2023}
+\resumeDesc{
+\begin{itemize}
+\item Wrote clean, secure and scalable code during all course
+\item Got basic skills in low-level programming on C++11.
+\item Got a powerful theoretical base in designing programs, algorithms and data structures
+\item Directly work with low-level testing utilities
+\end{itemize}
+}
+
+\resumeSubHeadingListEnd
+
+\section{Programming Skills}
+\resumeSubHeadingListStart
+\item{
+\textbf{Languages}{: Go, C++11 }
+}\vspace{-7pt}
+\item{
+\textbf{Technologies}{: TCP/IP, SQL, Git, Docker, Bash, PostgreSQL, MySQL, MongoDB, Redis, Clean Architecture, MVC, SOLID, GoF, RESTful/RPC API}
+}
+\vspace{-7pt}
+\item{
+\textbf{Knowledge}{: Algorithms, Data Structures, Networks, Operating Systems, Databases, Concurrency, Architectural patterns, OOP, Design Patterns}
+}
+\resumeSubHeadingListEnd
+
+\end{document}
